@@ -6,10 +6,8 @@ class StringCalculator
 
     numbers = string_of_numbers.split(',')
 
-    if numbers.size == 1
-      return string_of_numbers.to_i
-    else  
+    return string_of_numbers.to_i if numbers.size == 1
+
     numbers[0].to_i + numbers[1].to_i
-    end
   end
 end
