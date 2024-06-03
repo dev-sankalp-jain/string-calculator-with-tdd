@@ -14,5 +14,9 @@ describe StringCalculator do
     it 'returns the same number if only one number is passed' do
       expect(calculator.add('1')).to eq(1)
     end
+
+    it 'returns sum of numbers if two numbers are passed' do
+      expect(calculator.add('1,2')).to eq(3)
+    end
   end
 end
