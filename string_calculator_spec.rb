@@ -18,5 +18,9 @@ describe StringCalculator do
     it 'returns sum of numbers if two numbers are passed' do
       expect(calculator.add('1,2')).to eq(3)
     end
+
+    it 'returns sum of numbers if two or more numbers are passed' do
+      expect(calculator.add('1,2,3')).to eq(6)
+    end
   end
 end
