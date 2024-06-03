@@ -7,7 +7,7 @@ describe StringCalculator do
   subject(:calculator) { described_class.new }
 
   describe '#add' do
-    context 'with vaild inputs' do
+    context 'with valid inputs' do
       it 'returns 0 for empty string' do
         expect(calculator.add('')).to eq(0)
       end
@@ -34,6 +34,15 @@ describe StringCalculator do
     context 'with custom delimiters' do
       it 'returns sum of numbers' do
         expect(calculator.add("//;\n1;2")).to eq(3)
+      end
+    end
+
+    context 'with negative numbers' do
+      it 'raise error if a negative number is passed' do
+        expect do
+          calculator.add('1,-2,3,-4')
+        end.to raise_error(StringCalculator::NegativeNumberError,
+                           'negative numbers not allowed: -2, -4')
       end
     end
   end
