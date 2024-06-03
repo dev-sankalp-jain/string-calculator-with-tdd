@@ -8,6 +8,11 @@ class StringCalculator
 
     return string_of_numbers.to_i if numbers.size == 1
 
-    numbers[0].to_i + numbers[1].to_i
+    sum = 0
+    numbers.each do |number|
+      sum += number.to_i
+    end
+
+    sum
   end
 end
